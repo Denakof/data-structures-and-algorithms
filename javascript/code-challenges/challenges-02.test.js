@@ -25,13 +25,12 @@ Write a function named addOne that, given an array of numbers, uses map to retur
 
 const addOne = (arr) => {
   // Solution code here...
-  let array = []
-  arr.map(element => {
-    array.push(element + 1);
-  }
-  )
-  return array;
+  let add = arr.map((element) => {
+    return element + 1;
+  });
+  return add;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -41,9 +40,8 @@ Write a function named addQuestion that, given an array of strings, uses map to 
 
 const addQuestion = (arr) => {
   // Solution code here...
-  let strings = []
-  arr.map(element => {
-    strings.push(element + '?')
+  let strings = arr.map(element => {
+    return (element + '?')
   }
 
   )
@@ -62,15 +60,14 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 
 const forLoopTwoToThe = (arr) => {
   // Solution code here...
-  let newArray = []
+
   for (let index = 0; index < arr.length; index++) {
-    arr.map(element => {
-      newArray.push(Math.pow(element, 2))
-    })
+    arr.map(element =>
+      newArray.push(Math.pow(2, element))
+    )
   }
   return newArray;
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -79,7 +76,13 @@ Write a function named forEachTwoToThe that produces the same output as your for
 
 const forEachTwoToThe = (arr) => {
   // Solution code here...
+  let newArray = [];
+  arr.forEach((element) => newArray.push(Math.pow(2, element)));
+
+
+  return newArray;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -89,6 +92,11 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 
 const mapTwoToThe = (arr) => {
   // Solution code here...
+  let newArray = arr.map(element => Math.pow(2, element));
+
+
+
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
