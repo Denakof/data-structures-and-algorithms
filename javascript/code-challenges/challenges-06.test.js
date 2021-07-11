@@ -78,10 +78,8 @@ console.log(a) prints { fullName: 'Octavia Estelle Butler', yearBorn: 1947 }
 
 const addBirthYearProperty = (obj, year) => {
   // Solution code here...
-  obj.yearBornpro = year;
-  return obj;
-};
-
+  obj.yearBorn = year;
+  return obj;};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
 
