@@ -61,19 +61,11 @@ return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
   // Solution code here...
-  let totalSum = 0;
-
-  m.forEach((element) => {
-
-    element.forEach((i) => {
-
-      totalSum = totalSum + i;
-
-    });
-
-  });
-
-  return totalSum;
+  return matrix.reduce((accumlate, curr) => {
+    return accumlate + curr.reduce((accumlate2, curr2) => {
+      return accumlate2 + curr2;
+    }, 0);
+  }, 0);
 };
 
 
@@ -101,23 +93,8 @@ const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
   // Solution code here...
-  let summation = 0;
-
-  let newArr = [];
-
-  for (let i = 0; i < hoursOpen.length; i++) {
-
-    for (let j = 0; j < s.length; j++) {
-
-      summation = summation + s[j][i];
-    }
-
-    newArr.push(summation);
-
-    summation = 0;
-  }
-
-  return newArr;
+    return stores.reduce((acc, curr) => acc.map((currVal, Index) => currVal + curr[Index]));
+  
 
 };
 
@@ -133,15 +110,10 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 
 const salesData = (hours, data) => {
   // Solution code here...
-  let newArray = [];
-
-  hours.forEach((i, d) => {
-
-    newArray.push({ sales: `${data[d]} cookies`, time: i });
-
-  });
-
-  return newArray;
+  return data.reduce((accumlate, num, i) => {
+    accumlate.push({ sales: `${num} cookies`, time: hours[i] });
+    return accumlate;
+  }, []);
 
 
 };
